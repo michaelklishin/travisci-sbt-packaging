@@ -1,2 +1,2 @@
 #!/bin/sh
-java -Xms512M -Xmx1536M -Xss6M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=384M -jar /usr/lib/PACKAGE_NAME/JAR_NAME "$@"
+java -server -XX:ReservedCodeCacheSize=96M -Xms512M -Xmx1536M -Xss6M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=384M $SBT_JVM_OPTS -jar /usr/lib/PACKAGE_NAME/JAR_NAME "$@"
