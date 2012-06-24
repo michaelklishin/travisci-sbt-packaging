@@ -4,7 +4,7 @@ WORK_DIR='target/tmp'
 
 JAR_NAME='sbt-launch.jar'
 
-SBT_VERSION='0.11.3'
+SBT_VERSION='0.12.0-RC2'
 
 function clean { rm -rf target; }
 
