@@ -1,1 +1,6 @@
 target
+*.deb
+.Apple*
+*~
+~*
+*#
