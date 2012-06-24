@@ -1,2 +1,2 @@
 #!/bin/sh
-rm /usr/bin/sbt
+rm -f /usr/bin/sbt
