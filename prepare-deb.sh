@@ -4,6 +4,8 @@ WORK_DIR='target/tmp'
 
 JAR_NAME='sbt-launch.jar'
 
+SBT_VERSION='0.11.3'
+
 function clean { rm -rf target; }
 
 function prepare { rm -rf ${WORK_DIR}; mkdir -p ${WORK_DIR}; }
@@ -15,8 +17,8 @@ function jar_name { echo ${1} | sed 's|.*/\(.*.jar\).*|\1|g'; }
 function replace_jar_name { sed -i "s/JAR_NAME/${JAR_NAME}/g" ${@}; }
 
 function download_from {
-  jar_link='http://typesafe.artifactoryonline.com/typesafe/ivy-releases/org.scala-sbt/sbt-launch/0.11.3/sbt-launch.jar'
-  PACKAGE_NAME=sbt-0.11.3
+  jar_link="http://typesafe.artifactoryonline.com/typesafe/ivy-releases/org.scala-sbt/sbt-launch/$SBT_VERSION/sbt-launch.jar"
+  PACKAGE_NAME="sbt-$SBT_VERSION"
   SBT_DIR=${WORK_DIR}/usr/lib/${PACKAGE_NAME}
   mkdir -p ${SBT_DIR}
   wget ${jar_link} -P ${SBT_DIR}
